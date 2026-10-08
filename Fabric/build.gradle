@@ -1,0 +1,120 @@
+plugins {
+    id("multiloader-loader")
+    alias(libs.plugins.fabric.loom)
+}
+
+loom {
+    accessWidenerPath = file("src/main/resources/botania.accesswidener")
+    mixin.defaultRefmapName = "botania.refmap.json"
+
+    runs {
+        gameTest {
+            server()
+            vmArg("-Dfabric-api.gametest=1")
+        }
+
+        xplatDatagen {
+            client()
+            vmArg("-Dbotania.xplat_datagen=1")
+            vmArg("-Dfabric-api.datagen")
+            vmArg("-Dfabric-api.datagen.modid=botania")
+            vmArg("-Dfabric-api.datagen.output-dir=${file("../Xplat/src/generated/resources")}")
+        }
+
+        fabricDatagen {
+            client()
+            vmArg("-Dfabric-api.datagen")
+            vmArg("-Dfabric-api.datagen.modid=botania")
+            vmArg("-Dfabric-api.datagen.output-dir=${file("src/generated/resources")}")
+        }
+
+        configureEach {
+            runDir("../run")
+            ideConfigGenerated(true)
+            vmArg("-Dfabric-tag-conventions-v2.missingTagTranslationWarning=VERBOSE")
+        }
+    }
+
+}
+
+test {
+    useJUnitPlatform()
+}
+
+repositories {
+    maven {
+        name = "Modmuss"
+        url = "https://maven.modmuss50.me/"
+    }
+    maven {
+          name = "Ladysnake Libs"
+          url = "https://maven.ladysnake.org/releases"
+    }
+    maven {
+        name = "BuildCraft" // for LBA
+        url = "https://mod-buildcraft.com/maven"
+    }
+    maven {
+        name = "ParchmentMC"
+        url = "https://maven.parchmentmc.net/"
+    }
+    maven {
+        name = "Masa"
+        url = uri('https://masa.dy.fi/maven')
+    }
+}
+
+dependencies {
+    minecraft("com.mojang:minecraft:${minecraft_version}")
+    mappings loom.layered() {
+        officialMojangMappings()
+        parchment("org.parchmentmc.data:parchment-${minecraft_version}:${parchment_version}@zip")
+    }
+
+    modImplementation(libs.fabric.loader)
+    modImplementation(libs.fabric.api)
+
+    testImplementation(libs.fabric.junit)
+
+    compileOnly(libs.jetbrains.annotations)
+
+    modImplementation(libs.patchouli.fabric)
+    modImplementation(libs.trinkets)
+    modImplementation(libs.fiber)
+    include(libs.fiber)
+
+    modCompileOnly(variantOf(libs.emi.fabric) { classifier("api") })
+    modCompileOnly(libs.jei.fabric.api)
+    modCompileOnly(libs.rei.fabric)
+
+    modCompileOnly(libs.ears)
+    modCompileOnly(libs.sodium.fabric) { transitive = false }
+    modCompileOnly(libs.teamreborn.energy)
+    modCompileOnly(libs.speedrunigt)
+
+    modLocalRuntime(libs.here.be.no.dragons)
+
+    if (rootProject.hasProperty("load_override_jei")) {
+        modLocalRuntime(libs.jei.fabric.full)
+    } else if (rootProject.hasProperty("load_override_rei")) {
+        modLocalRuntime(libs.rei.fabric)
+    } else {
+        modLocalRuntime(libs.emi.fabric)
+    }
+
+    // for testing multiplayer features in singleplayer worlds, and weird things like movable block entities
+    if (rootProject.hasProperty("load_fabric_carpet")) {
+        modLocalRuntime(libs.carpet)
+    }
+
+    if (rootProject.hasProperty("load_fabric_speedrunigt")) {
+        modLocalRuntime(libs.speedrunigt)
+    }
+
+    if (file("../garden_of_glass/gardenofglass-${gog_version}.jar").exists()) {
+        modLocalRuntime(files("../garden_of_glass/gardenofglass-${gog_version}.jar"))
+    }
+
+    // for xplat data load condition generating
+    modLocalRuntime(files("lib/forged-conditions-21.1.0.jar"))
+}

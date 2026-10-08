@@ -1,0 +1,50 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "vazkii.botania.fabric.mixin",
+  "refmap": "${mod_id}.refmap.json",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "AbstractFurnaceBlockEntityFabricAccessor",
+    "AbstractMinecartFabricMixin",
+    "AnvilMenuFabricMixin",
+    "AxeItemFabricMixin",
+    "BeaconBlockEntityFabricMixin",
+    "CombatTrackerMixin",
+    "EnchantmentMenuFabricMixin",
+    "EnderManFabricMixin",
+    "ExplosionFabricMixin",
+    "HashCacheFabricMixin",
+    "HashCacheProviderCacheBuilderFabricMixin",
+    "HashCacheProviderCacheFabricMixin",
+    "ItemEntityFabricMixin",
+    "ItemPredicateFabricMixin",
+    "ItemStackFabricMixin",
+    "LivingEntityFabricMixin",
+    "PiglinAiFabricMixin",
+    "PlayerFabricMixin",
+    "PowderSnowBlockMixin",
+    "PrimedTntMixin",
+    "RepairItemRecipeFabricMixin",
+    "ResultSlotFabricMixin",
+    "ServerPlayerContainerListenerFabricMixin"
+  ],
+  "client": [
+    "client.AbstractTextureFabricMixin",
+    "client.BlockModelDeserializerFabricMixin",
+    "client.BossHealthOverlayFabricMixin",
+    "client.ClientPacketListenerMixin",
+    "client.DebugScreenOverlayFabricMixin",
+    "client.GuiGraphicsFabricMixin",
+    "client.KeyboardHandlerFabricMixin",
+    "client.MinecraftFabricMixin",
+    "client.ParticleEngineFabricMixin"
+  ],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
