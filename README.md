@@ -4,6 +4,8 @@ An unofficial Minecraft 1.21.1 NeoForge port of Botania, with compatibility fixe
 
 **Minecraft:** 1.21.1 · **Loader:** NeoForge · **Validated loader:** 21.1.248 · **Java:** 21 · **Version:** 457.1 (runtime metadata includes SNAPSHOT).
 
+Botania is a technology mod themed around natural magic: flowers generate and use mana to power equipment, devices, and crafting. This fork adapts the supplied port to NeoForge 1.21.1 and supports the matching ExtraBotany addon.
+
 ## Installation
 
 Install the runtime JAR in mods on both client and server. Required dependencies: Patchouli and Curios for NeoForge 1.21.1. Source JARs are for reading code, not installation. Never install this fork alongside another mod with the same mod ID.
@@ -50,3 +52,11 @@ Generative AI assisted porting, compatibility fixes, and preparation of this doc
 Неофициальный порт для Minecraft 1.21.1 / NeoForge. Ответственный за этот форк: Kirillich611. Автор исходного порта Botania: DragonFire. Авторы оригиналов: Vazkii и команда Botania; Lounode и команда ExtraBotany.
 
 О найденных ошибках сообщайте в Issues этого форка, приложив версии модов, действия для воспроизведения и лог или crash report без личных данных.
+
+## Screenshots
+
+Actual captures from the test profile; shader and other-mod visuals belong to their respective projects.
+
+![In-game validation](docs/screenshots/2026-10-07_18.12.26.png)
+
+![In-game validation](docs/screenshots/2026-10-07_18.14.59.png)

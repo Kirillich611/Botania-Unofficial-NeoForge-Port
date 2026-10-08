@@ -1,3 +1,6 @@
 *      text=auto eol=lf
 *.java text      diff=java eol=lf
 **/src/generated/**        linguist-generated
+# Windows development launchers
+gradlew.bat text eol=crlf
+launch-*.cmd text eol=crlf
