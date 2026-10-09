@@ -1,5 +1,7 @@
 # Botania — Unofficial NeoForge Port
 
+<img src="docs/branding/icon.png" alt="Unofficial NeoForge port icon" width="96">
+
 An unofficial port of **Botania for Minecraft 1.21.1 / NeoForge**.
 
 Requires **Java 21, Patchouli, and Curios**.
