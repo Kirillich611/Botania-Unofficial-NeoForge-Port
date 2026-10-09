@@ -1,9 +1,9 @@
 # Botania — Unofficial NeoForge Port
 
-Неофициальный порт **Botania для Minecraft 1.21.1 / NeoForge**. Нужны **Java 21, Patchouli и Curios**.
+An unofficial port of **Botania for Minecraft 1.21.1 / NeoForge**.
 
-Оригинальная Botania создана **Vazkii и командой Botania**. Порт распространяется на условиях [Botania License](LICENSE.txt); отдельные лицензии заимствованных частей сохранены в [ALTERNATE_LICENSES.txt](ALTERNATE_LICENSES.txt).
+Requires **Java 21, Patchouli, and Curios**.
 
-Перед установкой в старый мир сделайте резервную копию: некоторые кварцевые предметы изменили свои ID. Не устанавливайте одновременно с другой Botania.
+Original mod by **Vazkii and the Botania contributors**. Distributed under the [Botania License](LICENSE.txt), with [third-party license notices](ALTERNATE_LICENSES.txt) preserved.
 
-Хотите порт на другую версию Minecraft? Напишите в [Issues](https://github.com/Kirillich611/Botania-Unofficial-NeoForge-Port/issues).
+Want a port for another Minecraft version? Open an [issue](https://github.com/Kirillich611/Botania-Unofficial-NeoForge-Port/issues).
