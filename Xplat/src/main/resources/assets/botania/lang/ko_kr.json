@@ -1,4 +1,8 @@
 {
+  "block.botania.enchanted_soil": "마법이 부여된 흙",
+  "item.botania.overgrowth_seed": "과성장 씨앗",
+  "item.botania.ender_air_bottle": "엔더 공기가 든 병",
+  "entity.botania.ender_air_bottle": "엔더 공기가 든 병",
   "_comment0": "Note to translators: DO NOT COPY ENTRIES FROM ENGLISH",
   "_comment1": "I repeat: do NOT copy entries from English!!",
   "_comment2": "Copying English entries will cause them to become outdated when this file changes",
